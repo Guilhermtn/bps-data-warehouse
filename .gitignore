@@ -1,0 +1,22 @@
+# Dados brutos (arquivos grandes)
+data/raw/
+data/*.csv
+
+# Credenciais e variáveis de ambiente
+.env
+*.json
+
+# Arquivos de cache do Python
+__pycache__/
+*.pyc
+
+# Arquivos de ambiente virtual
+venv/
+.venv/
+
+# Arquivos do Jupyter Notebook
+.ipynb_checkpoints/
+
+# dbt
+transformacao_bps/target/
+transformacao_bps/dbt_packages/
