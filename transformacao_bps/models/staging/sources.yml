@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: dados_brutos_bps
+    database: bps_dw
+    schema: public
+    tables:
+      - name: raw_bps_2023
+      - name: raw_bps_2024
+      - name: raw_bps_2025
