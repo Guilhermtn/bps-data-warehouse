@@ -20,3 +20,4 @@ venv/
 # dbt
 transformacao_bps/target/
 transformacao_bps/dbt_packages/
+notebooks/data/
