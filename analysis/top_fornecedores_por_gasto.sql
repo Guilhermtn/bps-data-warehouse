@@ -9,9 +9,9 @@ SELECT
         (SUM(fc.preco_total) /
          SUM(SUM(fc.preco_total)) OVER () * 100)::numeric
     , 2)                                                     AS percentual_do_total
-FROM fato_compras fc
-JOIN dim_fornecedor df ON fc.id_fornecedor = df.id_fornecedor
+FROM bps_elt.fato_compras fc
+JOIN bps_elt.dim_fornecedor df ON fc.id_fornecedor = df.id_fornecedor
 WHERE fc.preco_total > 0
 GROUP BY df.nome_fornecedor
 ORDER BY gasto_total DESC
-LIMIT 10;
+LIMIT 5;

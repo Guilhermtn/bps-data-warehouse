@@ -11,9 +11,9 @@ SELECT
         PARTITION BY di.uf_instituicao
         ORDER BY SUM(fc.preco_total) DESC
     )                                                             AS ranking_no_estado
-FROM fato_compras fc
-JOIN dim_instituicao di ON fc.id_instituicao = di.id_instituicao
+FROM bps_elt.fato_compras fc
+JOIN bps_elt.dim_instituicao di ON fc.id_instituicao = di.id_instituicao
 WHERE fc.preco_total > 0
 GROUP BY di.nome_instituicao, di.uf_instituicao, di.esfera_administrativa
 ORDER BY gasto_total DESC
-LIMIT 15;
+LIMIT 10;

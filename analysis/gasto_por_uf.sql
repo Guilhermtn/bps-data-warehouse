@@ -10,8 +10,8 @@ SELECT
         (SUM(fc.preco_total) /
          SUM(SUM(fc.preco_total)) OVER () * 100)::numeric
     , 2)                                                     AS percentual_do_total
-FROM fato_compras fc
-JOIN dim_instituicao di ON fc.id_instituicao = di.id_instituicao
+FROM bps_elt.fato_compras fc
+JOIN bps_elt.dim_instituicao di ON fc.id_instituicao = di.id_instituicao
 WHERE fc.preco_total > 0
 GROUP BY di.uf_instituicao
 ORDER BY gasto_total DESC;

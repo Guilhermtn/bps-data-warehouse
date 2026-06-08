@@ -7,8 +7,8 @@ SELECT
     ROUND(AVG(fc.preco_unitario)::numeric, 2) AS preco_medio_unitario,
     ROUND(SUM(fc.preco_total)::numeric, 2) AS gasto_total,
     ROUND(SUM(fc.quantidade)::numeric, 0) AS total_itens_comprados
-FROM fato_compras fc
-JOIN dim_tempo dt ON fc.id_tempo = dt.ano
+FROM bps_elt.fato_compras fc
+JOIN bps_elt.dim_tempo dt ON fc.id_tempo = dt.ano
 WHERE fc.preco_unitario > 0
 GROUP BY dt.ano
 ORDER BY dt.ano;

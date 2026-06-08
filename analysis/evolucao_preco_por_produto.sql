@@ -12,9 +12,9 @@ SELECT
           AVG(CASE WHEN dt.ano = 2023 THEN fc.preco_unitario END)) /
           NULLIF(AVG(CASE WHEN dt.ano = 2023 THEN fc.preco_unitario END), 0) * 100)::numeric
     , 2)                                                          AS variacao_percentual_2023_2025
-FROM fato_compras fc
-JOIN dim_produto dp ON fc.id_produto = dp.id_produto
-JOIN dim_tempo   dt ON fc.id_tempo   = dt.ano
+FROM bps_elt.fato_compras fc
+JOIN bps_elt.dim_produto dp ON fc.id_produto = dp.id_produto
+JOIN bps_elt.dim_tempo   dt ON fc.id_tempo   = dt.ano
 WHERE fc.preco_unitario > 1
 GROUP BY dp.descricao_produto
 HAVING
